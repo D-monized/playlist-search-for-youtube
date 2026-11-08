@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Playlist Search for YouTube",
+  "version": "1.0.1",
+  "description": "Search YouTube videos in your browser history and bookmarks, and filter Liked / Watch Later / playlist pages.",
+  "permissions": ["history", "bookmarks"],
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Search YouTube history & bookmarks",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+  },
+  "content_scripts": [
+    { "matches": ["https://www.youtube.com/*"], "js": ["content.js"] }
+  ],
+  "browser_specific_settings": {
+    "gecko": { "id": "yt-search-everywhere@local", "strict_min_version": "115.0" }
+  }
+}
